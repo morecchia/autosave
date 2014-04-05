@@ -1,0 +1,77 @@
+section.form {
+	margin: 2em;
+}
+
+#subformA input, textarea {
+	width:375px;
+	height:25px;
+	display:block;
+	margin-top: 1em;
+	text-align: left;
+}
+
+#subformA textarea {
+	width:375px;
+	height:75px;
+	display:block;
+} 
+
+button.save {
+	width:120px;
+	background:#09C;
+	color:#fff;
+	height:30px;
+	margin:1em 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+button:hover {
+	background:#eaeaea;
+	color:#09C;
+	cursor: pointer;
+}
+
+button.clear {
+	width:120px;
+	background:#eaeaea;
+	color:#333;
+	height:30px;
+	margin:1em 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+button.clear:hover {
+	background:#09C;
+	color:#eaeaea;
+	cursor: pointer;
+}
+button.stop {
+	width:120px;
+	background:red;
+	color:#eaeaea;
+	height:30px;
+	margin:1em 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+button.stop:focus {
+	color:#333;
+	cursor: pointer;
+}
+button.start {
+	width:120px;
+	background: green;
+	color:#eaeaea;
+	height:30px;
+	margin:1em 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+button.start:focus {
+	color:#333;
+	cursor: pointer;
+}
