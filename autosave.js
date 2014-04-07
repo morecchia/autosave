@@ -11,20 +11,20 @@
     // TODO: add all form input types
     this.selectors = config.selectors || '';
 
-	// the key name for the localStorage object
+    // the key name for the localStorage object
     this.resourceName = config.resourceName || 'autosave';
 	
-	// milliseconds to wait before auto-saving
+    // milliseconds to wait before auto-saving
     this.interval = config.interval || 30000;
     
-	// set the inputs as soon as the page is loaded
-	this.setInputs();
+    // set the inputs as soon as the page is loaded
+    this.setInputs();
 	
-	// immediately start running if 'autorun' is true,
-	// else autosave has to be called manually
-	if (config.autorun) {
-	  this.run();
-	}
+    // immediately start running if 'autorun' is true,
+    // else autosave has to be called manually
+    if (config.autorun) {
+	this.run();
+    }
 
   };
   
@@ -113,7 +113,7 @@
   // this method clears the autosave key from localStorage
   Autosave.prototype.clearStorage = function () {
   
-	window.localStorage.removeItem(this.resourceName);
+     window.localStorage.removeItem(this.resourceName);
 	
   };
   
@@ -134,7 +134,7 @@
   // this method stops autosave	
   Autosave.prototype.stop = function () {
   
-	window.clearTimeout(this.timeout);
+    window.clearTimeout(this.timeout);
 	
   };
   
