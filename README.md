@@ -4,8 +4,8 @@ autosave
 Experimenting with implementing form input autosave using localStorage.  
 
 Dependencies: 
-jQuery
-Modernizr
+*   jQuery
+*   Modernizr
 
 Usage:
 *   See example.html
