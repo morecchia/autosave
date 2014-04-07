@@ -4,11 +4,11 @@
   var Autosave = function (config) {
   // our constructor/initial properties
 	
-	// the element to target; target the document body if not specified
+    // the element to target; target the document body if not specified
     this.element = document.getElementById(config.element) || document.body;
 
-	// the form inputs to select; all inputs are selected if not specified
-	// TODO: add all form input types
+    // the form inputs to select; all inputs are selected if not specified
+    // TODO: add all form input types
     this.selectors = config.selectors || '';
 
 	// the key name for the localStorage object
@@ -31,14 +31,14 @@
   // this method gets the inputs from the page and sets up a locaStorage object
   Autosave.prototype.getInputs = function () {
   
-	// TODO: add fallback local storage implementation for unsupported browsers
+    // TODO: add fallback local storage implementation for unsupported browsers
     if (Modernizr.localstorage) {
 	
-	  // our local storage array
+      // our local storage array
       var autosave = [];
 	  
-	  // iterate through all of the inputs, 
-	  // building an object for each element, and add to autosave array appropriately
+      // iterate through all of the inputs, 
+      // building an object for each element, and add to autosave array appropriately
       $(this.element).find(this.selectors).each(function (index, element) {
 
 	var $type = $(this).attr('type'),
@@ -52,9 +52,9 @@
 	
 	  if ($(this).prop('checked')) {
 	    item.name = $(this).attr('name');
-		item.value = $(this).val();
+	    item.value = $(this).val();
 		
-		autosave.push(item);
+	    autosave.push(item);
 	  }
 	  
 	} else {		
@@ -67,14 +67,14 @@
 		
       });      
 
-	  // set autosave as a localStorage item
+      // set autosave as a localStorage item
       window.localStorage.setItem(this.resourceName, JSON.stringify(autosave));
 		
     } else {
 	  
 	  // do some other implementation of local storage
 	  
-	}
+    }
 	
   };
   
@@ -128,6 +128,7 @@
       self.run();
       
     }, this.interval);
+    
   };
   
   // this method stops autosave	
