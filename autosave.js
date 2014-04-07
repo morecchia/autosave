@@ -41,27 +41,29 @@
 	  // building an object for each element, and add to autosave array appropriately
       $(this.element).find(this.selectors).each(function (index, element) {
 
-		var $type = $(this).attr('type'),
-			item = {
-				'id': index,
-				'type': $type || $(this).prop("tagName").toLowerCase()
-			};
-			
-		// check for radio button and use name/checked value
-		if (item.type === 'radio') {
+	var $type = $(this).attr('type'),
+	    item = {
+		'id': index,
+		'type': $type || $(this).prop("tagName").toLowerCase()
+	    };
 		
-		  if ($(this).prop('checked')) {
-		    item.name = $(this).attr('name');
-			item.value = $(this).val();
-			autosave.push(item);
-		  }
-		  
-		} else {		
-		  // use id/value for everything else
+	// check for radio button and use name/checked value
+	if (item.type === 'radio') {
+	
+	  if ($(this).prop('checked')) {
+	    item.name = $(this).attr('name');
+		item.value = $(this).val();
+		
+		autosave.push(item);
+	  }
+	  
+	} else {		
+	 // use id/value for everything else
           item.name = element.id; 
-		  item.value = $(element).val();
-		  autosave.push(item);		  
-		}
+	  item.value = $(element).val();
+	  
+	  autosave.push(item);		  
+	}
 		
       });      
 
@@ -82,27 +84,28 @@
     if (window.localStorage[this.resourceName]) {
     
       var LSText = window.localStorage.getItem(this.resourceName),
-		  LSObject = JSON.parse(LSText);
+	  LSObject = JSON.parse(LSText);
 	
       LSObject.forEach(function (item) {
 		
         if ( item.type === 'radio' ) {
 		
           $('input[name="' + item.name + '"][value="' + item.value + '"]')
-			.prop('checked', true);
+		.prop('checked', true);
 		  
         } else if (item.type === 'select') {
+
+	  $('#' + item.name + ' option[value="' + item.value + '"]')
+		.prop('selected', true);
 		  
-		  $('#' + item.name + ' option[value="' + item.value + '"]')
-			.prop('selected', true);
+	} else {
+
+	  $('#' + item.name + '').val(item.value);
 		  
-		} else {
-		
-		  $('#' + item.name + '').val(item.value);
-		  
-		}
+	}
 		  
       });
+      
     }
 	
   };
