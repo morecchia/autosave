@@ -72,7 +72,7 @@
 		
     } else {
 	  
-	  // do some other implementation of local storage
+	// do some other implementation of local storage
 	  
     }
 	
